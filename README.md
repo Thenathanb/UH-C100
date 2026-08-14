@@ -15,14 +15,34 @@ npm run build    # production build -> dist/
 
 ## Deploying
 
-Any static host works since this is a Vite build. Easiest options:
-[Vercel](https://vercel.com) or [Netlify](https://netlify.com) — connect
-the repo, framework preset "Vite", build command `npm run build`, output
-directory `dist`. Both are free for a site this size.
+**Live now on GitHub Pages: https://thenathanb.github.io/UH-C100/**
+
+`.github/workflows/deploy.yml` builds and redeploys automatically on every
+push to `main` — no manual step needed. GitHub Pages itself is configured
+(repo Settings → Pages → source: GitHub Actions), no further setup required.
+
+Since this is a GitHub Pages *project* site (served under `/UH-C100/`,
+not the domain root), a few things are wired specifically for that:
+
+- `vite.config.js` sets `base: '/UH-C100/'`.
+- `src/main.jsx` passes that same base to `<BrowserRouter basename>`.
+- `src/lib/url.js`'s `withBase()` prefixes runtime image paths (used by
+  `PhotoSlot` and `Logo`) so photos resolve under the subpath too.
+- `public/404.html` + a small script in `index.html` implement the
+  [SPA-on-GitHub-Pages redirect trick](https://github.com/rafgraph/spa-github-pages),
+  since GitHub Pages has no server-side rewrites — without it, a direct
+  link to e.g. `/events/back-2-school-jam-2026` would 404 instead of
+  loading the app.
+
+**If you ever move to a custom domain** (still a TODO — see below) or a
+host with real rewrites (Vercel/Netlify), the site would then live at the
+domain root instead of a subpath, so `base`/`basename` should go back to
+`/` and the 404.html trick can be removed (those hosts rewrite unmatched
+routes to `index.html` for you).
 
 - **Domain**: TODO — decide on a domain (e.g. `collegiate100uh.org`) and
-  point it at whichever host you pick.
-- **Hosting**: TODO — no host chosen yet.
+  either point it at GitHub Pages (via a `CNAME` file + DNS) or migrate
+  hosts.
 
 ## Adding real photos (no code changes needed)
 
