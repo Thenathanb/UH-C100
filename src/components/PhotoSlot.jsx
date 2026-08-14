@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { withBase } from "../lib/url.js";
 
 /** The "no image here yet" look, shared by PhotoSlot and anything that already
  * knows at render time there's no photo (e.g. an empty event photo folder). */
@@ -50,7 +51,7 @@ export default function PhotoSlot({
     <div className={`relative overflow-hidden bg-cloud ${className}`}>
       {!failed ? (
         <img
-          src={src}
+          src={withBase(src)}
           alt={alt}
           onError={() => setFailed(true)}
           className={imgClassName}

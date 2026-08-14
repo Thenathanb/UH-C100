@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { withBase } from "../lib/url.js";
 
 export default function Logo({ className = "" }) {
   const [failed, setFailed] = useState(false);
@@ -14,7 +15,7 @@ export default function Logo({ className = "" }) {
 
   return (
     <img
-      src="/images/logo.jpg"
+      src={withBase("/images/logo.jpg")}
       alt="Collegiate 100 at University of Houston, Clutch City chapter"
       onError={() => setFailed(true)}
       className={`rounded-full ${className}`}
