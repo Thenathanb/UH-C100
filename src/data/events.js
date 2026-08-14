@@ -1,0 +1,232 @@
+// Add new events here. `date` must be an ISO string ("YYYY-MM-DD").
+// `category` drives the color-coded tag: "academic" | "professional" | "community-service" | "wellness" | "general".
+// Photos: each event gets its own folder at src/assets/events/<event id>/ —
+// drop any number of image files in there (see src/data/eventPhotos.js) and
+// they show up automatically as a swipeable gallery on that event's page.
+
+export const events = [
+  // --- Past events (real recaps) ---
+  {
+    id: "back-2-school-jam-2026",
+    title: "Back 2 School Jam with Rodeo Dental & Orthodontics",
+    date: "2026-08-02", // TODO: confirm exact date
+    time: null,
+    location: "Houston, TX",
+    category: "community-service",
+    status: "past",
+    summary:
+      "Collegiate 100 at University of Houston partnered with Rodeo Dental & Orthodontics to volunteer at the World Youth Foundation Inc. Back 2 School Jam, helping prepare Houston students and families for a successful school year.",
+    body: [
+      "This past Saturday, Collegiate 100 at University of Houston proudly partnered with Rodeo Dental & Orthodontics to volunteer at the World Youth Foundation Inc. Back 2 School Jam, helping prepare Houston students and families for a successful school year.",
+      "Our members had the opportunity to serve alongside community leaders, local organizations, and dedicated volunteers, reinforcing our commitment to leadership, scholarship, and service. Seeing the smiles on students' faces and knowing we played a small part in supporting their educational journey made the experience truly worthwhile.",
+      "We extend our sincere gratitude to the World Youth Foundation Inc. for organizing such an impactful event and to Rodeo Dental & Orthodontics for allowing us to serve alongside their team. Together, we continue to demonstrate the power of collaboration and community engagement.",
+      "At Collegiate 100 at University of Houston, we believe that leadership is best demonstrated through service. We look forward to continuing to create meaningful opportunities that positively impact our campus and the greater Houston community.",
+    ],
+  },
+  {
+    id: "c100-conference-2026",
+    title: "C100 National Conference: AI Advancement & Leadership Competition",
+    date: "2026-07-12", // TODO: confirm exact date
+    time: null,
+    location: "National C100 Conference", // TODO: confirm city/venue
+    category: "academic",
+    status: "past",
+    summary:
+      "Collegiate 100 at University of Houston placed 2nd nationally in the C100 AI Advancement & Leadership Competition, with Ava Sienna Chambers representing Clutch City.",
+    body: [
+      "Reflecting on an incredible milestone from the recent C100 Conference! We're proud to share that Collegiate 100 at University of Houston placed 2nd nationally in the C100 AI Advancement & Leadership Competition.",
+      "Competing alongside talented teams from across the country made this achievement even more meaningful, and we're grateful for the opportunity to showcase our work.",
+      "A special congratulations to Ava Sienna Chambers for representing Clutch City at the conference. You represented our team with excellence, and we're proud of everything you accomplished.",
+      "Congratulations to everyone involved, and thank you to the C100 Conference for creating a platform that celebrates innovation, leadership, and the future of AI. Here's to continuing to build, learn, and achieve even more.",
+    ],
+  },
+  {
+    id: "mens-mental-health-conversation-2026",
+    title: "Men's Mental Health Conversation with the Houston Texans",
+    date: "2026-06-15", // TODO: confirm exact date
+    time: null,
+    location: "Provaré Restaurant, Houston, TX",
+    category: "wellness",
+    status: "past",
+    summary:
+      "Members represented Collegiate 100 at an exclusive Men's Mental Health Conversation hosted with the Houston Texans and Emerging 100 Houston, featuring Texans players Will Anderson Jr. and Azeez Al-Shaair.",
+    body: [
+      "We are incredibly proud of our members who represented our chapter at the exclusive Men's Mental Health Conversation, hosted in collaboration with the Houston Texans and Emerging 100 Houston at Provaré Restaurant.",
+      "As part of Men's Mental Health Awareness Month, this intimate discussion on wellness, vulnerability, and the vital importance of support networks was a powerful reminder of why we must continue to break the stigma.",
+      "A special thank you to Houston Texans players Will Anderson Jr. and Azeez Al-Shaair for sharing their time, insight, and pouring into our community.",
+      "When we prioritize mental wellness, we build stronger leaders, brothers, and communities. Let's keep the conversation going.",
+    ],
+  },
+
+  // --- Upcoming events ---
+  {
+    id: "virtual-gbm-2026-08-23",
+    title: "Virtual General Body Meeting",
+    date: "2026-08-23",
+    time: "6:00 PM",
+    location: "Virtual", // TODO: add Zoom/meeting link
+    category: "general",
+    status: "upcoming",
+    summary: "Chapter kickoff GBM for the semester, joining virtually.",
+    body: [],
+  },
+  {
+    id: "cats-back-2026-08-25",
+    title: "Cat's Back",
+    date: "2026-08-25",
+    time: "3:00 PM - 5:00 PM",
+    location: "Houston Room, University of Houston",
+    category: "social",
+    status: "upcoming",
+    summary: "Come meet Collegiate 100 at Cat's Back in the Houston Room.",
+    body: [],
+  },
+  {
+    id: "cats-back-2026-08-26",
+    title: "Cat's Back",
+    date: "2026-08-26",
+    time: "12:00 PM - 2:00 PM",
+    location: "Houston Room, University of Houston",
+    category: "social",
+    status: "upcoming",
+    summary: "Second Cat's Back session, again in the Houston Room.",
+    body: [],
+  },
+  {
+    id: "merch-madness-2026-08-29",
+    title: "Merch Madness",
+    date: "2026-08-29",
+    time: "12:00 PM - 7:00 PM",
+    location: "1100 Merrill Street, Houston, TX",
+    category: "social",
+    status: "upcoming",
+    summary: "Grab the latest Collegiate 100 merch.",
+    body: [],
+  },
+  {
+    id: "love-island-watch-party-2026-08-31",
+    title: "Love Island Watch Party",
+    date: "2026-08-31",
+    time: "7:30 PM - 9:00 PM",
+    location: "WhatItDo BBQ",
+    category: "social",
+    status: "upcoming",
+    summary: "Casual watch party and hangout at WhatItDo BBQ.",
+    body: [],
+  },
+
+  // --- Recurring: Run Club (every 2nd & 4th Sunday, 6 PM) ---
+  // TODO: extend into October+ as the semester goes on.
+  {
+    id: "run-club-2026-08-09",
+    title: "Run Club",
+    date: "2026-08-09",
+    time: "6:00 PM",
+    location: "TBD", // TODO: usual meetup spot
+    category: "wellness",
+    status: "upcoming",
+    summary: "Recurring Collegiate 100 run club — every 2nd & 4th Sunday at 6 PM.",
+    body: [],
+  },
+  {
+    id: "run-club-2026-08-23",
+    title: "Run Club",
+    date: "2026-08-23",
+    time: "6:00 PM",
+    location: "TBD",
+    category: "wellness",
+    status: "upcoming",
+    summary: "Recurring Collegiate 100 run club — every 2nd & 4th Sunday at 6 PM.",
+    body: [],
+  },
+  {
+    id: "run-club-2026-09-13",
+    title: "Run Club",
+    date: "2026-09-13",
+    time: "6:00 PM",
+    location: "TBD",
+    category: "wellness",
+    status: "upcoming",
+    summary: "Recurring Collegiate 100 run club — every 2nd & 4th Sunday at 6 PM.",
+    body: [],
+  },
+  {
+    id: "run-club-2026-09-27",
+    title: "Run Club",
+    date: "2026-09-27",
+    time: "6:00 PM",
+    location: "TBD",
+    category: "wellness",
+    status: "upcoming",
+    summary: "Recurring Collegiate 100 run club — every 2nd & 4th Sunday at 6 PM.",
+    body: [],
+  },
+
+  // --- Recurring: Bible Study (every 1st & 3rd Thursday, 7 PM) ---
+  // TODO: extend into October+ as the semester goes on.
+  {
+    id: "bible-study-2026-08-06",
+    title: "Bible Study",
+    date: "2026-08-06",
+    time: "7:00 PM",
+    location: "TBD", // TODO: usual meetup spot
+    category: "social",
+    status: "upcoming",
+    summary: "Recurring Bible study — every 1st & 3rd Thursday at 7 PM.",
+    body: [],
+  },
+  {
+    id: "bible-study-2026-08-20",
+    title: "Bible Study",
+    date: "2026-08-20",
+    time: "7:00 PM",
+    location: "TBD",
+    category: "social",
+    status: "upcoming",
+    summary: "Recurring Bible study — every 1st & 3rd Thursday at 7 PM.",
+    body: [],
+  },
+  {
+    id: "bible-study-2026-09-03",
+    title: "Bible Study",
+    date: "2026-09-03",
+    time: "7:00 PM",
+    location: "TBD",
+    category: "social",
+    status: "upcoming",
+    summary: "Recurring Bible study — every 1st & 3rd Thursday at 7 PM.",
+    body: [],
+  },
+  {
+    id: "bible-study-2026-09-17",
+    title: "Bible Study",
+    date: "2026-09-17",
+    time: "7:00 PM",
+    location: "TBD",
+    category: "social",
+    status: "upcoming",
+    summary: "Recurring Bible study — every 1st & 3rd Thursday at 7 PM.",
+    body: [],
+  },
+];
+
+export const categoryStyles = {
+  academic: { label: "Academic", dot: "bg-rose", text: "text-rose" },
+  professional: { label: "Professional", dot: "bg-ink", text: "text-ink" },
+  "community-service": {
+    label: "Community Service",
+    dot: "bg-rose/50",
+    text: "text-rose/80",
+  },
+  wellness: {
+    label: "Health & Wellness",
+    dot: "bg-rose/75",
+    text: "text-rose/90",
+  },
+  social: { label: "Social", dot: "bg-ink/45", text: "text-ink/70" },
+  general: { label: "General Body", dot: "bg-ink-soft", text: "text-ink-soft" },
+};
+
+export function sortByDateAsc(list) {
+  return [...list].sort((a, b) => new Date(a.date) - new Date(b.date));
+}

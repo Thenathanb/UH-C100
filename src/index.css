@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Manrope", "Inter", system-ui, sans-serif;
+
+  /* Brand palette — pulled from the Collegiate 100 Clutch City logo mark */
+  --color-ink: #0a0a0a;       /* rich black — "COLLEGIATE 100" text, headers, navbar */
+  --color-ink-soft: #6b6b6b;  /* mid gray — secondary text/dots */
+  --color-paper: #fafafa;     /* off-white background */
+  --color-cloud: #f0f0f0;     /* light gray — card backgrounds, section breaks */
+  --color-line: #dadada;      /* mid gray — hairline borders, shadow depth */
+  --color-rose: #ce1141;      /* brand red accent — links, buttons, hover states, dividers */
+  --color-rose-soft: #fbe1e7; /* pale red tint — badge backgrounds, selection highlight */
+
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-bounce-soft: bounce-soft 2.2s ease-in-out infinite;
+  --animate-page-in: page-in 0.5s ease both;
+  --animate-blink: blink 1s step-end infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--color-rose-soft);
+  color: var(--color-ink);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes bounce-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes modal-pop {
+  from { opacity: 0; transform: scale(0.92) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.typewriter-line {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 0.7s steps(24, end) forwards;
+}
+
+.typewriter-line:nth-child(1) { animation-delay: 0.1s; }
+.typewriter-line:nth-child(2) { animation-delay: 0.75s; }
+.typewriter-line:nth-child(3) { animation-delay: 1.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .typewriter-line {
+    width: auto;
+    animation: none;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
