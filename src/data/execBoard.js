@@ -39,15 +39,30 @@ export const execBoard = [
     linkedin: "https://www.linkedin.com/in/mjtorresr/",
   },
   {
+    name: "Jesiah James",
+    title: "Membership Co-Chair",
+    photo: "/images/exec/jesiah-james.jpg",
+  },
+  {
     name: "Ja'Shaud Johnson",
     title: "Mentorship Co-Chair",
     photo: "/images/exec/jashaud-johnson.jpg",
+  },
+  {
+    name: "Neha Addus",
+    title: "Co-Director of Mentorship",
+    photo: "/images/exec/neha-addus.jpg",
   },
   {
     name: "Victoria Jones",
     title: "Economic Empowerment Co-Chair",
     photo: "/images/exec/victoria-jones.jpg",
     linkedin: "https://www.linkedin.com/in/victoria-jones-3590533b5/",
+  },
+  {
+    name: "Lauren Taylor",
+    title: "Economic Empowerment Co-Chair",
+    photo: "/images/exec/lauren-taylor.jpg",
   },
   {
     name: "Anthony Smith",
@@ -58,6 +73,16 @@ export const execBoard = [
     name: "Jasachin Harris",
     title: "Health and Wellness Chair",
     photo: "/images/exec/jasachin-harris.jpg",
+  },
+  {
+    name: "Mikayla Nicholas",
+    title: "Education Co-Chair",
+    photo: "/images/exec/mikayla-nicholas.jpg",
+  },
+  {
+    name: "Alisha Caballero",
+    title: "Education Co-Chair",
+    photo: "/images/exec/alisha-caballero.jpg",
   },
   {
     name: "Joel Abrha",

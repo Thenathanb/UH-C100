@@ -23,15 +23,16 @@ export default function ExecBoard() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-16 lg:px-8 lg:py-20">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {execBoard.map((member, i) => (
             <PersonCard
-              key={member.title}
+              key={member.name}
               photo={member.photo}
               name={member.name}
               subtitle={member.title}
-              delay={i * 80}
+              delay={i * 60}
               onClick={member.linkedin ? () => setSelected(member) : undefined}
+              compact
             />
           ))}
         </div>

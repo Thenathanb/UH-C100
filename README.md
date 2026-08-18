@@ -131,17 +131,20 @@ Things from the original checklist that still need real info (all marked
 - [x] "25+ internships" collage — in place at `public/images/interns.jpg`,
       featured on the homepage Impact section and About page Why Join
 - [x] Homepage's "why-join.jpg" photo — in place
-- [x] Exec board roster + headshots — 12 members: Elanna Benton
+- [x] Exec board roster + headshots — 17 members: Elanna Benton
       (President), Ava Sienna Chambers (Vice President), LaZaria Holland
       (Secretary), Benesha Kasongo (Treasurer), Leah Masumbuko
-      (Sergeant-At-Arms), Mario Torres (Membership Co-Chair), Ja'Shaud
-      Johnson (Mentorship Co-Chair), Victoria Jones (Economic
-      Empowerment Co-Chair), Anthony Smith (Health and Wellness
-      Co-Chair), Jasachin Harris (Health and Wellness Chair), Joel
+      (Sergeant-At-Arms), Mario Torres & Jesiah James (Membership
+      Co-Chairs), Ja'Shaud Johnson (Mentorship Co-Chair) & Neha Addus
+      (Co-Director of Mentorship), Victoria Jones & Lauren Taylor
+      (Economic Empowerment Co-Chairs), Anthony Smith (Health and
+      Wellness Co-Chair) & Jasachin Harris (Health and Wellness Chair),
+      Mikayla Nicholas & Alisha Caballero (Education Co-Chairs), Joel
       Abrha (Co-Director of Communications), Allen Chervil (Historian).
-      No bios — cards show just name + title. 7 of 12 have a LinkedIn
-      link and are clickable; Benesha, Ja'Shaud, Anthony, Jasachin, and
-      Joel don't have one yet, so their cards aren't clickable
+      No bios — cards show just name + title. Card grid is now compact
+      (2-5 columns depending on screen size, ColorStack-style) to fit
+      everyone without the page getting too long. 7 of 17 have a
+      LinkedIn link and are clickable; the rest don't have one yet
 - [x] Recent grads — 8 members in place: Alaya Lee (Education), Jaiden
       Boyd (MIS/Marketing), Nilah Hurd (Political Science), Chloe Dennis
       (Health), Ronelle Urey (Public Health), Paris Joubert (Kinesiology),

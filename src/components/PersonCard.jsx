@@ -10,6 +10,7 @@ export default function PersonCard({
   delay = 0,
   onClick,
   photoPosition = "center",
+  compact = false,
 }) {
   return (
     <Reveal variant="up" delay={delay}>
@@ -31,10 +32,22 @@ export default function PersonCard({
             photoPosition === "top" ? "object-top" : "object-center"
           }`}
         />
-        <div className="p-5">
-          <h3 className="font-display text-lg font-bold text-ink">{name}</h3>
+        <div className={compact ? "p-3" : "p-5"}>
+          <h3
+            className={`font-display font-bold text-ink ${
+              compact ? "text-sm leading-snug" : "text-lg"
+            }`}
+          >
+            {name}
+          </h3>
           {subtitle && (
-            <p className="text-sm font-semibold text-rose">{subtitle}</p>
+            <p
+              className={`font-semibold text-rose ${
+                compact ? "text-xs leading-snug" : "text-sm"
+              }`}
+            >
+              {subtitle}
+            </p>
           )}
           {description && (
             <p className="mt-2 text-sm leading-relaxed text-ink/60">
