@@ -25,6 +25,7 @@ export const execBoard = [
     name: "Benesha Kasongo",
     title: "Treasurer",
     photo: "/images/exec/benesha-kasongo.jpg",
+    linkedin: "https://www.linkedin.com/in/benesha-kasongo-ba0247192/",
   },
   {
     name: "Leah Masumbuko",
@@ -48,6 +49,7 @@ export const execBoard = [
     name: "Ja'Shaud Johnson",
     title: "Mentorship Co-Chair",
     photo: "/images/exec/jashaud-johnson.jpg",
+    linkedin: "https://www.linkedin.com/in/jashaudjohnson/",
   },
   {
     name: "Neha Addus",
@@ -71,6 +73,7 @@ export const execBoard = [
     name: "Anthony Smith",
     title: "Health and Wellness Co-Chair",
     photo: "/images/exec/anthony-smith.jpg",
+    linkedin: "https://www.linkedin.com/in/anthony-smith2/",
   },
   {
     name: "Jasachin Harris",

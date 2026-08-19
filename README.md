@@ -145,9 +145,8 @@ Things from the original checklist that still need real info (all marked
       a dark gradient, matching colorstackosu.org/execboard's card
       treatment exactly (see `src/components/ExecCard.jsx`) — 2/3/4-column
       grid depending on screen size. Hover shows a red accent bar on the
-      left edge for clickable cards only (no hover prompt text — removed
-      per feedback). 14 of 17 have a LinkedIn link and are clickable;
-      Benesha, Ja'Shaud, and Anthony don't have one yet
+      left edge (no hover prompt text — removed per feedback). All 17
+      members now have a LinkedIn link and are clickable
 - [x] Recent grads — 8 members in place: Alaya Lee (Education), Jaiden
       Boyd (MIS/Marketing), Nilah Hurd (Political Science), Chloe Dennis
       (Health), Ronelle Urey (Public Health), Paris Joubert (Kinesiology),
