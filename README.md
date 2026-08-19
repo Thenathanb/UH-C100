@@ -1,7 +1,6 @@
 # Collegiate 100 at University of Houston — Clutch City
 
-React (Vite) + Tailwind CSS v4 site for the Clutch City chapter. Layout is
-modeled on colorstackosu.org's structure (hero → mission → pillars →
+React (Vite) + Tailwind CSS v4 site for the Clutch City chapter. \structure (hero → mission → pillars →
 highlights → CTA), rebuilt from scratch with Collegiate 100's own branding
 and content.
 
