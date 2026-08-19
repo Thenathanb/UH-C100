@@ -135,21 +135,19 @@ Things from the original checklist that still need real info (all marked
       (President), Ava Sienna Chambers (Vice President), LaZaria Holland
       (Secretary), Benesha Kasongo (Treasurer), Leah Masumbuko
       (Sergeant-At-Arms), Mario Torres & Jesiah James (Membership
-      Co-Chairs), Ja'Shaud Johnson (Mentorship Co-Chair) & Neha Addus
-      (Co-Director of Mentorship), Victoria Jones & Lauren Taylor
-      (Economic Empowerment Co-Chairs), Anthony Smith (Health and
-      Wellness Co-Chair) & Jasachin Harris (Health and Wellness Chair),
-      Mikayla Nicholas & Alisha Caballero (Education Co-Chairs), Joel
-      Abrha (Co-Director of Communications), Allen Chervil (Historian).
-      No bios — cards show just name + title, overlaid directly on a
-      full-bleed portrait photo (aspect 3:4) with a dark gradient, matching
-      colorstackosu.org/execboard's card treatment exactly (see
-      `src/components/ExecCard.jsx`) — 2/3/4-column grid depending on
-      screen size. 12 of 17 have a LinkedIn link and are clickable
-      (hover shows a "View LinkedIn" prompt + a red accent bar on the
-      left edge — cards without a link skip both, so they don't imply
-      an action that isn't there); Benesha, Ja'Shaud, Anthony, Jasachin,
-      and Joel don't have one yet
+      Co-Chairs), Ja'Shaud Johnson & Neha Addus (Mentorship Co-Chairs),
+      Victoria Jones & Lauren Taylor (Economic Empowerment Co-Chairs),
+      Anthony Smith (Health and Wellness Co-Chair) & Jasachin Harris
+      (Health and Wellness Chair), Mikayla Nicholas & Alisha Caballero
+      (Education Co-Chairs), Joel Abrha (Co-Director of Communications),
+      Allen Chervil (Historian). No bios — cards show just name + title,
+      overlaid directly on a full-bleed portrait photo (aspect 3:4) with
+      a dark gradient, matching colorstackosu.org/execboard's card
+      treatment exactly (see `src/components/ExecCard.jsx`) — 2/3/4-column
+      grid depending on screen size. Hover shows a red accent bar on the
+      left edge for clickable cards only (no hover prompt text — removed
+      per feedback). 14 of 17 have a LinkedIn link and are clickable;
+      Benesha, Ja'Shaud, and Anthony don't have one yet
 - [x] Recent grads — 8 members in place: Alaya Lee (Education), Jaiden
       Boyd (MIS/Marketing), Nilah Hurd (Political Science), Chloe Dennis
       (Health), Ronelle Urey (Public Health), Paris Joubert (Kinesiology),

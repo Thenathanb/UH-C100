@@ -51,7 +51,7 @@ export const execBoard = [
   },
   {
     name: "Neha Addus",
-    title: "Co-Director of Mentorship",
+    title: "Mentorship Co-Chair",
     photo: "/images/exec/neha-addus.jpg",
     linkedin: "https://www.linkedin.com/in/neha-addus/",
   },
@@ -76,6 +76,7 @@ export const execBoard = [
     name: "Jasachin Harris",
     title: "Health and Wellness Chair",
     photo: "/images/exec/jasachin-harris.jpg",
+    linkedin: "https://www.linkedin.com/in/jasachin-harris-96069a2b6/",
   },
   {
     name: "Mikayla Nicholas",
@@ -93,6 +94,7 @@ export const execBoard = [
     name: "Joel Abrha",
     title: "Co-Director of Communications",
     photo: "/images/exec/joel-abrha.jpg",
+    linkedin: "https://www.linkedin.com/in/joel-abrha-22237b251/",
   },
   {
     name: "Allen Chervil",
