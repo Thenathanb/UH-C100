@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SectionHeading from "../components/SectionHeading.jsx";
 import Reveal from "../components/Reveal.jsx";
-import PersonCard from "../components/PersonCard.jsx";
+import ExecCard from "../components/ExecCard.jsx";
 import PersonModal from "../components/PersonModal.jsx";
 import { execBoard } from "../data/execBoard.js";
 
@@ -23,16 +23,13 @@ export default function ExecBoard() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-16 lg:px-8 lg:py-20">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5 lg:grid-cols-4 lg:gap-6">
           {execBoard.map((member, i) => (
-            <PersonCard
+            <ExecCard
               key={member.name}
-              photo={member.photo}
-              name={member.name}
-              subtitle={member.title}
+              member={member}
               delay={i * 60}
               onClick={member.linkedin ? () => setSelected(member) : undefined}
-              compact
             />
           ))}
         </div>

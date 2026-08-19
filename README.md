@@ -141,10 +141,15 @@ Things from the original checklist that still need real info (all marked
       Wellness Co-Chair) & Jasachin Harris (Health and Wellness Chair),
       Mikayla Nicholas & Alisha Caballero (Education Co-Chairs), Joel
       Abrha (Co-Director of Communications), Allen Chervil (Historian).
-      No bios — cards show just name + title. Card grid is now compact
-      (2-5 columns depending on screen size, ColorStack-style) to fit
-      everyone without the page getting too long. 7 of 17 have a
-      LinkedIn link and are clickable; the rest don't have one yet
+      No bios — cards show just name + title, overlaid directly on a
+      full-bleed portrait photo (aspect 3:4) with a dark gradient, matching
+      colorstackosu.org/execboard's card treatment exactly (see
+      `src/components/ExecCard.jsx`) — 2/3/4-column grid depending on
+      screen size. 12 of 17 have a LinkedIn link and are clickable
+      (hover shows a "View LinkedIn" prompt + a red accent bar on the
+      left edge — cards without a link skip both, so they don't imply
+      an action that isn't there); Benesha, Ja'Shaud, Anthony, Jasachin,
+      and Joel don't have one yet
 - [x] Recent grads — 8 members in place: Alaya Lee (Education), Jaiden
       Boyd (MIS/Marketing), Nilah Hurd (Political Science), Chloe Dennis
       (Health), Ronelle Urey (Public Health), Paris Joubert (Kinesiology),

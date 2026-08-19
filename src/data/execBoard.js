@@ -42,6 +42,7 @@ export const execBoard = [
     name: "Jesiah James",
     title: "Membership Co-Chair",
     photo: "/images/exec/jesiah-james.jpg",
+    linkedin: "https://www.linkedin.com/in/jesiah-james/",
   },
   {
     name: "Ja'Shaud Johnson",
@@ -52,6 +53,7 @@ export const execBoard = [
     name: "Neha Addus",
     title: "Co-Director of Mentorship",
     photo: "/images/exec/neha-addus.jpg",
+    linkedin: "https://www.linkedin.com/in/neha-addus/",
   },
   {
     name: "Victoria Jones",
@@ -63,6 +65,7 @@ export const execBoard = [
     name: "Lauren Taylor",
     title: "Economic Empowerment Co-Chair",
     photo: "/images/exec/lauren-taylor.jpg",
+    linkedin: "https://www.linkedin.com/in/lauren-taylor-28229a327/",
   },
   {
     name: "Anthony Smith",
@@ -78,11 +81,13 @@ export const execBoard = [
     name: "Mikayla Nicholas",
     title: "Education Co-Chair",
     photo: "/images/exec/mikayla-nicholas.jpg",
+    linkedin: "https://www.linkedin.com/in/mikayla-nicholas-3956513a4/",
   },
   {
     name: "Alisha Caballero",
     title: "Education Co-Chair",
     photo: "/images/exec/alisha-caballero.jpg",
+    linkedin: "https://www.linkedin.com/in/alisha-caballero-5207743a7/",
   },
   {
     name: "Joel Abrha",
