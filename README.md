@@ -154,13 +154,38 @@ Things from the original checklist that still need real info (all marked
 - [x] Grad LinkedIn links — 6 of 8 in place (click a grad card, same
       modal as Exec Board). No link given yet for Paris Joubert or Nick
       Samuel, so those two cards aren't clickable
-- [x] Real upcoming events — Virtual GBM (8/23), Cat's Back (8/25 &
-      8/26, Houston Room), Merch Madness (8/29, 1100 Merrill St), Love
-      Island Watch Party (8/31, WhatItDo BBQ), plus recurring Run Club
-      (every 2nd & 4th Sunday, 6 PM) and Bible Study (every 1st & 3rd
-      Thursday, 7 PM) seeded through late September. Added a new
-      "Social" event category for these. No photos yet for any of
-      them — will show placeholders until added
+- [x] Real upcoming events — August: Virtual GBM (8/23), Cat's Back
+      (8/25 & 8/26, Houston Room), Merch Madness (8/29, 1100 Merrill
+      St), Love Island Watch Party (8/31, WhatItDo BBQ). September:
+      C100 Mixer Collab (9/3, The Savoy), Women of Gold Kickball (9/8,
+      TBD), Trail Ride (9/11, Lynn Eusan Park), E100 Learning Event
+      (9/12, SC South), GBM (9/15, Engineering Lecture Hall), Chapter
+      Photoshoot (9/15, TBD), Internship Panel: Synergy (9/17, SC
+      North), Splash Pad (9/22, Lynn Eusan Park), What's Not in the
+      Syllabus (9/28, CBB 118). Plus recurring Run Club (every 2nd &
+      4th Sunday, 6 PM) and Bible Study (every 1st & 3rd Thursday, 7
+      PM) seeded through late September. Added a new "Social" event
+      category for these. No photos yet for any of them — will show
+      placeholders until added
+- [x] Events page redesign — matches colorstackosu.org/events'
+      structure: a "Schedule / Event Calendar" section (their version
+      embeds a paid third-party calendar widget we don't have access
+      to, so this keeps our own custom-built `EventCalendar`, just
+      relabeled/restyled to match), plus a new "Gallery / Recent
+      Events" section that shows past-event photo recaps — but *only*
+      for events that actually have photos dropped in
+      (`src/assets/events/<id>/`); events without any photos are
+      skipped entirely rather than showing a blank/placeholder recap,
+      per explicit instruction. Currently shows all 3 past events
+      since all 3 have real photos.
+- [x] Fixed a real bug found while building this: the "Up next" list
+      (now 20 events and growing) was wrapped in the same scroll-reveal
+      animation as the calendar above it, making that combined block so
+      tall that the calendar sat at `opacity: 0` on load — a visitor
+      would've had to scroll most of the way down the sidebar before
+      the calendar became visible. Split into separate reveals per
+      section and capped "Up next" to the soonest 6 (with a "+N more on
+      the calendar" note) so this can't recur as more events are added.
 - [ ] Meeting schedule
 - [ ] Involvement points system details
 - [ ] Membership requirements + dues amount
