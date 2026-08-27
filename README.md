@@ -178,9 +178,8 @@ Things from the original checklist that still need real info (all marked
       rendered structure (confirmed against their live page, not just
       static HTML): a full-width "Schedule / Event Calendar" section
       with a real month grid — adjacent-month padding days, today
-      highlighted, event titles/times written directly into each day
-      cell (up to 2 inline + a "+N more" that filters the list below),
-      Today/Print/month-nav buttons. Their version is a paid
+      highlighted, every event's title/time written directly into its
+      day cell, Today/Print/month-nav buttons. Their version is a paid
       third-party calendar widget (Styled Calendar) we don't have
       access to, so this is our own build (`EventCalendar.jsx`) matched
       to the same look and interaction, not an embed. Plus a "Gallery /
@@ -191,7 +190,15 @@ Things from the original checklist that still need real info (all marked
       events that actually have photos dropped in
       (`src/assets/events/<id>/`); events without any are skipped
       entirely, never a blank/placeholder recap. Currently shows all 3
-      past events since all 3 have real photos.
+      past events since all 3 have real photos. Dropped the separate
+      filterable "browse all events" grid entirely per feedback — it's
+      redundant now that the calendar shows everything inline, and it
+      was rendering blank "EVENT PHOTO" placeholders for events without
+      photos, which is exactly what this page is meant to avoid.
+      Calendar day entries are plain (non-clickable) text until an
+      event has real photos, then become a link to its recap — same
+      "nothing clickable/shown until there's real content" rule used
+      for Exec Board/Grad LinkedIn cards.
 - [x] Fixed a real bug found while building this: the "Up next" list
       (now 20 events and growing) was wrapped in the same scroll-reveal
       animation as the calendar above it, making that combined block so

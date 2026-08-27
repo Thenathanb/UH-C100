@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { categoryStyles } from "../data/events.js";
+import { getEventPhotos } from "../data/eventPhotos.js";
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-const MAX_INLINE = 2;
 
 function toKey(date) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(
@@ -22,7 +22,7 @@ function compactTime(time) {
   return min === "00" ? `${h}${suffix}` : `${h}:${min}${suffix}`;
 }
 
-export default function EventCalendar({ events, selectedDate, onSelectDate }) {
+export default function EventCalendar({ events }) {
   const [monthCursor, setMonthCursor] = useState(() => {
     const seed = events[0] ? new Date(`${events[0].date}T00:00:00`) : new Date();
     return new Date(seed.getFullYear(), seed.getMonth(), 1);
@@ -107,20 +107,17 @@ export default function EventCalendar({ events, selectedDate, onSelectDate }) {
       </div>
 
       <div className="grid grid-cols-7">
-        {cells.map((date, i) => {
+        {cells.map((date) => {
           const key = toKey(date);
           const dayEvents = eventsByDay.get(key) ?? [];
           const inMonth = isCurrentMonth(date);
-          const isSelected = selectedDate === key;
           const isToday = key === todayKey;
-          const inline = dayEvents.slice(0, MAX_INLINE);
-          const overflow = dayEvents.length - inline.length;
 
           return (
             <div
               key={key}
               className={`min-h-[92px] border-b border-r border-line p-1.5 sm:min-h-[110px] sm:p-2 [&:nth-child(7n)]:border-r-0 ${
-                isSelected ? "bg-rose/10" : isToday ? "bg-rose-soft/60" : inMonth ? "bg-paper" : "bg-cloud/50"
+                isToday ? "bg-rose-soft/60" : inMonth ? "bg-paper" : "bg-cloud/50"
               }`}
             >
               <span
@@ -132,33 +129,40 @@ export default function EventCalendar({ events, selectedDate, onSelectDate }) {
               </span>
 
               <div className="mt-1 flex flex-col gap-0.5">
-                {inline.map((e) => (
-                  <Link
-                    key={e.id}
-                    to={`/events/${e.id}`}
-                    className="flex items-center gap-1 truncate rounded px-0.5 py-px text-left text-[10px] font-medium leading-tight text-ink/80 hover:bg-rose/10 hover:text-rose sm:text-[11px]"
-                    title={e.title}
-                  >
+                {dayEvents.map((e) => {
+                  const hasPhotos = getEventPhotos(e.id).length > 0;
+                  const label = (
+                    <>
+                      <span
+                        className={`h-1.5 w-1.5 shrink-0 rounded-full ${
+                          categoryStyles[e.category]?.dot ?? "bg-ink-soft"
+                        }`}
+                      />
+                      <span className="truncate">
+                        {compactTime(e.time) ? `${compactTime(e.time)} ` : ""}
+                        {e.title}
+                      </span>
+                    </>
+                  );
+                  return hasPhotos ? (
+                    <Link
+                      key={e.id}
+                      to={`/events/${e.id}`}
+                      className="flex items-center gap-1 truncate rounded px-0.5 py-px text-left text-[10px] font-medium leading-tight text-ink/80 hover:bg-rose/10 hover:text-rose sm:text-[11px]"
+                      title={e.title}
+                    >
+                      {label}
+                    </Link>
+                  ) : (
                     <span
-                      className={`h-1.5 w-1.5 shrink-0 rounded-full ${
-                        categoryStyles[e.category]?.dot ?? "bg-ink-soft"
-                      }`}
-                    />
-                    <span className="truncate">
-                      {compactTime(e.time) ? `${compactTime(e.time)} ` : ""}
-                      {e.title}
+                      key={e.id}
+                      className="flex items-center gap-1 truncate px-0.5 py-px text-[10px] font-medium leading-tight text-ink/60 sm:text-[11px]"
+                      title={e.title}
+                    >
+                      {label}
                     </span>
-                  </Link>
-                ))}
-                {overflow > 0 && (
-                  <button
-                    type="button"
-                    onClick={() => onSelectDate(isSelected ? null : key)}
-                    className="truncate rounded px-0.5 text-left text-[10px] font-bold text-rose hover:underline sm:text-[11px]"
-                  >
-                    +{overflow} more
-                  </button>
-                )}
+                  );
+                })}
               </div>
             </div>
           );
