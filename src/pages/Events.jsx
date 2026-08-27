@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import SectionHeading from "../components/SectionHeading.jsx";
 import EventCard from "../components/EventCard.jsx";
 import EventCalendar from "../components/EventCalendar.jsx";
+import EventRecapCard from "../components/EventRecapCard.jsx";
 import Reveal from "../components/Reveal.jsx";
 import { events, sortByDateAsc, categoryStyles } from "../data/events.js";
 import { getEventPhotos } from "../data/eventPhotos.js";
@@ -12,8 +13,6 @@ export default function Events() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [filter, setFilter] = useState("all");
 
-  const upcoming = sortByDateAsc(events.filter((e) => e.status === "upcoming"));
-  const upNext = upcoming.slice(0, 6);
   const past = sortByDateAsc(events.filter((e) => e.status === "past")).reverse();
 
   // Recap gallery: only past events that actually have photos dropped in —
@@ -38,7 +37,7 @@ export default function Events() {
             <SectionHeading
               eyebrow="Calendar"
               title="Events"
-              description="Everything Collegiate 100 at UH has planned, and everything we've already pulled off. Tap a highlighted date to filter below."
+              description="Everything Collegiate 100 at UH has planned, and everything we've already pulled off. Tap an event on the calendar to open it, or filter the full list below."
             />
           </Reveal>
         </div>
@@ -46,93 +45,61 @@ export default function Events() {
 
       <section className="mx-auto max-w-6xl px-5 py-12 lg:px-8 lg:py-16">
         <Reveal variant="up">
-          <SectionHeading eyebrow="Schedule" title="Event Calendar" align="left" />
+          <SectionHeading eyebrow="Schedule" title="Event Calendar" />
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-[360px_1fr]">
-          <div className="flex flex-col gap-6">
-            <Reveal variant="left">
-              <EventCalendar
-                events={events}
-                selectedDate={selectedDate}
-                onSelectDate={setSelectedDate}
-              />
-            </Reveal>
-            {upNext.length > 0 && (
-              <Reveal variant="left" delay={100}>
-                <div className="rounded-2xl border border-line bg-paper p-5">
-                  <h3 className="font-display text-sm font-bold uppercase tracking-wide text-ink/50">
-                    Up next
-                  </h3>
-                  <ul className="mt-3 space-y-3">
-                    {upNext.map((e) => (
-                      <li key={e.id} className="text-sm">
-                        <p className="font-semibold text-ink">{e.title}</p>
-                        <p className="text-ink/50">
-                          {new Date(`${e.date}T00:00:00`).toLocaleDateString("en-US", {
-                            month: "short",
-                            day: "numeric",
-                          })}
-                          {e.time ? ` · ${e.time}` : ""}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                  {upcoming.length > upNext.length && (
-                    <p className="mt-3 text-xs text-ink/40">
-                      +{upcoming.length - upNext.length} more on the calendar
-                    </p>
-                  )}
-                </div>
-              </Reveal>
-            )}
-          </div>
+        <Reveal variant="up" delay={100} className="mt-8">
+          <EventCalendar
+            events={events}
+            selectedDate={selectedDate}
+            onSelectDate={setSelectedDate}
+          />
+        </Reveal>
 
-          <div>
-            <Reveal variant="right">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex flex-wrap gap-2">
-                  {FILTERS.map((f) => (
-                    <button
-                      key={f}
-                      type="button"
-                      onClick={() => setFilter(f)}
-                      className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors ${
-                        filter === f
-                          ? "border-ink bg-ink text-paper"
-                          : "border-line text-ink/60 hover:border-ink"
-                      }`}
-                    >
-                      {f === "all" ? "All" : categoryStyles[f].label}
-                    </button>
-                  ))}
-                </div>
-                {selectedDate && (
+        <div className="mt-14">
+          <Reveal variant="up">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="flex flex-wrap gap-2">
+                {FILTERS.map((f) => (
                   <button
+                    key={f}
                     type="button"
-                    onClick={() => setSelectedDate(null)}
-                    className="text-xs font-semibold text-rose hover:text-ink"
+                    onClick={() => setFilter(f)}
+                    className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors ${
+                      filter === f
+                        ? "border-ink bg-ink text-paper"
+                        : "border-line text-ink/60 hover:border-ink"
+                    }`}
                   >
-                    Clear date filter ×
+                    {f === "all" ? "All" : categoryStyles[f].label}
                   </button>
-                )}
-              </div>
-            </Reveal>
-
-            {visible.length ? (
-              <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
-                {visible.map((event, i) => (
-                  <Reveal key={event.id} variant="up" delay={Math.min(i, 8) * 60}>
-                    <EventCard event={event} />
-                  </Reveal>
                 ))}
               </div>
-            ) : (
-              <p className="mt-10 text-sm text-ink/50">
-                No events match those filters yet.
-              </p>
-            )}
-          </div>
+              {selectedDate && (
+                <button
+                  type="button"
+                  onClick={() => setSelectedDate(null)}
+                  className="text-xs font-semibold text-rose hover:text-ink"
+                >
+                  Clear date filter ×
+                </button>
+              )}
+            </div>
+          </Reveal>
+
+          {visible.length ? (
+            <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {visible.map((event, i) => (
+                <Reveal key={event.id} variant="up" delay={Math.min(i, 8) * 60}>
+                  <EventCard event={event} />
+                </Reveal>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-10 text-sm text-ink/50">
+              No events match those filters yet.
+            </p>
+          )}
         </div>
       </section>
 
@@ -147,9 +114,7 @@ export default function Events() {
             </Reveal>
             <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {pastWithPhotos.map((event, i) => (
-                <Reveal key={event.id} variant="up" delay={i * 80}>
-                  <EventCard event={event} />
-                </Reveal>
+                <EventRecapCard key={event.id} event={event} delay={i * 80} />
               ))}
             </div>
           </div>

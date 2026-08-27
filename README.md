@@ -174,17 +174,24 @@ Things from the original checklist that still need real info (all marked
       PM) seeded through late September. Added a new "Social" event
       category for these. No photos yet for any of them — will show
       placeholders until added
-- [x] Events page redesign — matches colorstackosu.org/events'
-      structure: a "Schedule / Event Calendar" section (their version
-      embeds a paid third-party calendar widget we don't have access
-      to, so this keeps our own custom-built `EventCalendar`, just
-      relabeled/restyled to match), plus a new "Gallery / Recent
-      Events" section that shows past-event photo recaps — but *only*
-      for events that actually have photos dropped in
-      (`src/assets/events/<id>/`); events without any photos are
-      skipped entirely rather than showing a blank/placeholder recap,
-      per explicit instruction. Currently shows all 3 past events
-      since all 3 have real photos.
+- [x] Events page redesign — matches colorstackosu.org/events' actual
+      rendered structure (confirmed against their live page, not just
+      static HTML): a full-width "Schedule / Event Calendar" section
+      with a real month grid — adjacent-month padding days, today
+      highlighted, event titles/times written directly into each day
+      cell (up to 2 inline + a "+N more" that filters the list below),
+      Today/Print/month-nav buttons. Their version is a paid
+      third-party calendar widget (Styled Calendar) we don't have
+      access to, so this is our own build (`EventCalendar.jsx`) matched
+      to the same look and interaction, not an embed. Plus a "Gallery /
+      Recent Events" section using a new `EventRecapCard` — full-bleed
+      photo with the title overlaid via a gradient (same visual
+      language as `ExecCard`, matching their actual gallery card style,
+      not our old photo+text-panel `EventCard`) — shown *only* for
+      events that actually have photos dropped in
+      (`src/assets/events/<id>/`); events without any are skipped
+      entirely, never a blank/placeholder recap. Currently shows all 3
+      past events since all 3 have real photos.
 - [x] Fixed a real bug found while building this: the "Up next" list
       (now 20 events and growing) was wrapped in the same scroll-reveal
       animation as the calendar above it, making that combined block so
