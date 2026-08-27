@@ -82,17 +82,24 @@ automatically:
 
 No entry in `events.js` and no separate `photo` field needed — it's purely
 based on the folder's contents. Name files `01.jpg`, `02.jpg`, etc. if you
-want to control the order; otherwise they sort alphabetically. Current
-folders:
+want to control the order; otherwise they sort alphabetically.
+
+Every event in `events.js` has a matching (empty, until you add photos)
+folder already created under `src/assets/events/<id>/` — 25 folders as of
+this writing. 3 have real photos in them:
 
 ```
 src/assets/events/
-├── back-2-school-jam-2026/       01.jpg (real photo)
-├── c100-conference-2026/         01.jpg (real photo)
-├── mens-mental-health-conversation-2026/  01.jpg (real photo)
-├── general-body-meeting-1/       (empty — add photos once it happens)
-└── professional-workshop-1/      (empty — add photos once it happens)
+├── back-2-school-jam-2026/               01.jpg (real photo)
+├── c100-conference-2026/                 01.jpg (real photo)
+├── mens-mental-health-conversation-2026/ 01.jpg (real photo)
+└── ...22 more, one per upcoming event — empty until photos are added
 ```
+
+Once an upcoming event happens, drop its photos into the matching folder
+and it'll automatically pick up a cover photo everywhere on the site *and*
+show up in the Events page's "Recent Events" gallery (see below) — no
+code changes, no new folder to create.
 
 ## Where the content lives
 
