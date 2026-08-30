@@ -309,21 +309,25 @@ export const events = [
   },
 ];
 
+// Colors are a validated categorical palette (dataviz skill) — each hue is
+// distinct enough to tell apart at a glance and under color-vision deficiency,
+// not just shades of the same brand accent. Keep this order; it's what was
+// validated for adjacent-pair separation (see scripts/validate_palette.js).
 export const categoryStyles = {
   academic: { label: "Academic", dot: "bg-rose", text: "text-rose" },
-  professional: { label: "Professional", dot: "bg-ink", text: "text-ink" },
+  professional: { label: "Professional", dot: "bg-cat-blue", text: "text-cat-blue" },
   "community-service": {
     label: "Community Service",
-    dot: "bg-rose/50",
-    text: "text-rose/80",
+    dot: "bg-cat-teal",
+    text: "text-cat-teal",
   },
   wellness: {
     label: "Health & Wellness",
-    dot: "bg-rose/75",
-    text: "text-rose/90",
+    dot: "bg-cat-green",
+    text: "text-cat-green",
   },
-  social: { label: "Social", dot: "bg-ink/45", text: "text-ink/70" },
-  general: { label: "General Body", dot: "bg-ink-soft", text: "text-ink-soft" },
+  social: { label: "Social", dot: "bg-cat-magenta", text: "text-cat-magenta" },
+  general: { label: "General Body", dot: "bg-cat-amber", text: "text-cat-amber" },
 };
 
 export function sortByDateAsc(list) {

@@ -13,6 +13,14 @@
   --color-rose: #ce1141;      /* brand red accent — links, buttons, hover states, dividers */
   --color-rose-soft: #fbe1e7; /* pale red tint — badge backgrounds, selection highlight */
 
+  /* Event category palette — validated for CVD-safe adjacent-pair separation
+     against the paper surface (dataviz skill, scripts/validate_palette.js) */
+  --color-cat-blue: #2a78d6;    /* professional */
+  --color-cat-teal: #1baf7a;    /* community service */
+  --color-cat-green: #008300;   /* health & wellness */
+  --color-cat-magenta: #e87ba4; /* social */
+  --color-cat-amber: #c9820a;   /* general body */
+
   --animate-marquee: marquee 32s linear infinite;
   --animate-bounce-soft: bounce-soft 2.2s ease-in-out infinite;
   --animate-page-in: page-in 0.5s ease both;
