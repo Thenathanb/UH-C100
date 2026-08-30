@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 import { categoryStyles } from "../data/events.js";
-import { getEventPhotos } from "../data/eventPhotos.js";
+import EventAddModal from "./EventAddModal.jsx";
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -23,6 +22,7 @@ function compactTime(time) {
 }
 
 export default function EventCalendar({ events }) {
+  const [modalEvent, setModalEvent] = useState(null);
   const [monthCursor, setMonthCursor] = useState(() => {
     const seed = events[0] ? new Date(`${events[0].date}T00:00:00`) : new Date();
     return new Date(seed.getFullYear(), seed.getMonth(), 1);
@@ -129,40 +129,25 @@ export default function EventCalendar({ events }) {
               </span>
 
               <div className="mt-1 flex flex-col gap-0.5">
-                {dayEvents.map((e) => {
-                  const hasPhotos = getEventPhotos(e.id).length > 0;
-                  const label = (
-                    <>
-                      <span
-                        className={`h-1.5 w-1.5 shrink-0 rounded-full ${
-                          categoryStyles[e.category]?.dot ?? "bg-ink-soft"
-                        }`}
-                      />
-                      <span className="truncate">
-                        {compactTime(e.time) ? `${compactTime(e.time)} ` : ""}
-                        {e.title}
-                      </span>
-                    </>
-                  );
-                  return hasPhotos ? (
-                    <Link
-                      key={e.id}
-                      to={`/events/${e.id}`}
-                      className="flex items-center gap-1 truncate rounded px-0.5 py-px text-left text-[10px] font-medium leading-tight text-ink/80 hover:bg-rose/10 hover:text-rose sm:text-[11px]"
-                      title={e.title}
-                    >
-                      {label}
-                    </Link>
-                  ) : (
+                {dayEvents.map((e) => (
+                  <button
+                    key={e.id}
+                    type="button"
+                    onClick={() => setModalEvent(e)}
+                    className="flex items-center gap-1 truncate rounded px-0.5 py-px text-left text-[10px] font-medium leading-tight text-ink/80 hover:bg-rose/10 hover:text-rose sm:text-[11px]"
+                    title={e.title}
+                  >
                     <span
-                      key={e.id}
-                      className="flex items-center gap-1 truncate px-0.5 py-px text-[10px] font-medium leading-tight text-ink/60 sm:text-[11px]"
-                      title={e.title}
-                    >
-                      {label}
+                      className={`h-1.5 w-1.5 shrink-0 rounded-full ${
+                        categoryStyles[e.category]?.dot ?? "bg-ink-soft"
+                      }`}
+                    />
+                    <span className="truncate">
+                      {compactTime(e.time) ? `${compactTime(e.time)} ` : ""}
+                      {e.title}
                     </span>
-                  );
-                })}
+                  </button>
+                ))}
               </div>
             </div>
           );
@@ -177,6 +162,8 @@ export default function EventCalendar({ events }) {
           </span>
         ))}
       </div>
+
+      <EventAddModal event={modalEvent} onClose={() => setModalEvent(null)} />
     </div>
   );
 }

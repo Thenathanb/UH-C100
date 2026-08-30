@@ -24,7 +24,7 @@ export default function Events() {
             <SectionHeading
               eyebrow="Calendar"
               title="Events"
-              description="Everything Collegiate 100 at UH has planned, and everything we've already pulled off. Tap an event on the calendar once photos are up to open its recap."
+              description="Everything Collegiate 100 at UH has planned, and everything we've already pulled off. Tap any event on the calendar to add it to your Google or Apple calendar."
             />
           </Reveal>
         </div>

@@ -195,10 +195,18 @@ Things from the original checklist that still need real info (all marked
       redundant now that the calendar shows everything inline, and it
       was rendering blank "EVENT PHOTO" placeholders for events without
       photos, which is exactly what this page is meant to avoid.
-      Calendar day entries are plain (non-clickable) text until an
-      event has real photos, then become a link to its recap — same
-      "nothing clickable/shown until there's real content" rule used
-      for Exec Board/Grad LinkedIn cards.
+- [x] "Add to my calendar" — every event on the calendar is clickable
+      and opens a popup (`EventAddModal.jsx`) with "Add to Google
+      Calendar" (opens a pre-filled Google Calendar link) and "Add to
+      Apple Calendar" (downloads a `.ics` file — also opens fine in
+      Outlook or any other calendar app) — modeled on the Google
+      Calendar embed popup pattern, but built from our own event data
+      (`src/lib/calendarLinks.js`) instead of a live shared calendar, so
+      there's no second place to keep events in sync. Times are emitted
+      as floating local time (no UTC/DST conversion) since every event
+      and everyone opening these links is in Central time anyway. A
+      "View photo recap →" link only appears in the popup when that
+      event actually has photos.
 - [x] Fixed a real bug found while building this: the "Up next" list
       (now 20 events and growing) was wrapped in the same scroll-reveal
       animation as the calendar above it, making that combined block so
