@@ -20,10 +20,11 @@ export const site = {
 
   membership: {
     requirements: [
-      "Currently enrolled at the University of Houston", // TODO — confirm GPA / classification requirements
+      "Currently enrolled at the University of Houston",
+      "Must be in good standing with the university",
+      "Minimum cumulative GPA of 2.75",
       "Attend the mandatory new-member orientation",
       "Maintain active attendance at general body meetings and chapter events",
-      "Complete a minimum number of service/involvement hours per semester", // TODO
     ],
     dues: "Dues amount TBD. Contact the chapter for current semester pricing.", // TODO
     pointsSystemNote:

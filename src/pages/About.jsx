@@ -124,17 +124,6 @@ export default function About() {
           ))}
         </div>
 
-        <Reveal variant="up">
-          <div className="mt-6 rounded-2xl border border-line bg-cloud p-6">
-            <h3 className="font-display text-base font-bold text-ink">
-              Meeting schedule
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-ink/60">
-              {site.meetingSchedule}
-            </p>
-          </div>
-        </Reveal>
-
         <Reveal variant="scale">
           <div className="mt-10 flex justify-center">
             <Link
