@@ -24,8 +24,8 @@ function compactTime(time) {
 export default function EventCalendar({ events }) {
   const [modalEvent, setModalEvent] = useState(null);
   const [monthCursor, setMonthCursor] = useState(() => {
-    const seed = events[0] ? new Date(`${events[0].date}T00:00:00`) : new Date();
-    return new Date(seed.getFullYear(), seed.getMonth(), 1);
+    const today = new Date();
+    return new Date(today.getFullYear(), today.getMonth(), 1);
   });
 
   const eventsByDay = useMemo(() => {
