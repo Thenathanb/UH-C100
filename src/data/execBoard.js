@@ -103,6 +103,7 @@ export const execBoard = [
     name: "Uche Ogbuaku",
     title: "Communications Co-Chair",
     photo: "/images/exec/uche-ogbuaku.jpg",
+    linkedin: "https://www.linkedin.com/in/uchechukwu-ogbuaku-1a6145306/",
   },
   {
     name: "Allen Chervil",
