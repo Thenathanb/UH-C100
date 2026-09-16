@@ -7,6 +7,30 @@
 export const events = [
   // --- Past events (real recaps) ---
   {
+    id: "e100-leadership-class-2026-08-29",
+    title: "Emerging 100 Leadership Class",
+    date: "2026-08-29",
+    time: null,
+    location: null, // TODO: confirm venue
+    category: "professional",
+    status: "past",
+    summary:
+      "Members suited up for a leadership class with Emerging 100, competing alongside other chapters in the Chapter Cup.", // TODO: add a recap
+    body: [],
+  },
+  {
+    id: "run-club-2026-08-30",
+    title: "Run Club",
+    date: "2026-08-30",
+    time: "6:00 PM",
+    location: "University of Houston",
+    category: "wellness",
+    status: "past",
+    summary:
+      "Members and friends came out for a Sunday evening run with the Collegiate 100 run club.", // TODO: add a recap
+    body: [],
+  },
+  {
     id: "back-2-school-jam-2026",
     title: "Back 2 School Jam with Rodeo Dental & Orthodontics",
     date: "2026-08-02", // TODO: confirm exact date
@@ -143,8 +167,9 @@ export const events = [
     time: "6:00 PM - 11:00 PM",
     location: "Lynn Eusan Park",
     category: "social",
-    status: "upcoming",
-    summary: "Chapter trail ride at Lynn Eusan Park.",
+    status: "past",
+    summary:
+      "The C100 Trail Ride brought a big crowd out to Lynn Eusan Park, and Aisha Nwadei was presented with a $250 Collegiate 100 Scholarship.", // TODO: add a recap
     body: [],
   },
   {
