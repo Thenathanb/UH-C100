@@ -100,6 +100,11 @@ export const execBoard = [
     linkedin: "https://www.linkedin.com/in/joel-abrha-22237b251/",
   },
   {
+    name: "Uche Ogbuaku",
+    title: "Communications Co-Chair",
+    photo: "/images/exec/uche-ogbuaku.jpg",
+  },
+  {
     name: "Allen Chervil",
     title: "Historian",
     photo: "/images/exec/allen-chervil.jpg",
