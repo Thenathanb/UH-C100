@@ -7,10 +7,10 @@
       // Single Page Apps for GitHub Pages
       // https://github.com/rafgraph/spa-github-pages
       // GitHub Pages has no server-side rewrites, so a deep link like
-      // /UH-C100/events/foo 404s. This redirects it to the app root with
+      // /events/foo 404s. This redirects it to the app root with
       // the original path encoded in the query string; index.html decodes
       // it back before React Router mounts.
-      var pathSegmentsToKeep = 1; // keep "/UH-C100"
+      var pathSegmentsToKeep = 0; // custom domain serves the site at the root
 
       var l = window.location;
       l.replace(
