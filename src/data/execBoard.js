@@ -95,7 +95,7 @@ export const execBoard = [
   },
   {
     name: "Joel Abrha",
-    title: "Co-Director of Communications",
+    title: "Communications Co-Chair",
     photo: "/images/exec/joel-abrha.jpg",
     linkedin: "https://www.linkedin.com/in/joel-abrha-22237b251/",
   },
