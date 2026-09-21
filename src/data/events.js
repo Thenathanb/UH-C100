@@ -212,8 +212,9 @@ export const events = [
     time: "6:00 PM - 9:00 PM",
     location: "SC North",
     category: "professional",
-    status: "upcoming",
-    summary: "Panel discussion on landing and making the most of internships.",
+    status: "past",
+    summary:
+      "\"From Classroom to Career: Getting Your First Internship\" — a panel with Clutch City Collegiate 100 and the Nigerian Students Association.", // TODO: add a recap
     body: [],
   },
   {
