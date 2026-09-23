@@ -40,7 +40,7 @@ export default function Contact() {
             </h3>
             <a
               href={`mailto:${site.contactEmail}`}
-              className="mt-2 block text-sm font-semibold text-rose"
+              className="mt-2 inline-block text-sm font-semibold text-rose underline decoration-rose/40 underline-offset-4 transition-colors hover:decoration-rose"
             >
               {site.contactEmail}
             </a>
@@ -48,16 +48,17 @@ export default function Contact() {
             <h3 className="mt-8 font-display text-lg font-bold text-ink">
               Follow along
             </h3>
-            <div className="mt-3 flex flex-col gap-2">
+            <div className="mt-3 flex flex-wrap gap-3">
               {socials.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm font-medium text-ink/60 hover:text-ink"
+                  className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-5 py-2.5 text-sm font-bold text-ink transition-colors hover:border-ink hover:bg-ink hover:text-paper"
                 >
                   {s.label}
+                  <span aria-hidden="true">↗</span>
                 </a>
               ))}
             </div>
@@ -119,9 +120,8 @@ export default function Contact() {
               Send Message
             </button>
             <p className="mt-3 text-xs text-ink/40">
-              Opens your email client addressed to {site.contactEmail}. TODO:
-              swap for a form service (e.g. Formspree) if you'd rather not
-              rely on mailto.
+              {/* TODO: swap for a form service (e.g. Formspree) if you'd rather not rely on mailto. */}
+              Opens your email client addressed to {site.contactEmail}.
             </p>
           </form>
         </div>
