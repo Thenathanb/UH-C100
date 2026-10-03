@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { categoryStyles } from "../data/events.js";
+import { c100Week, categoryStyles } from "../data/events.js";
 import EventAddModal from "./EventAddModal.jsx";
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -112,21 +112,42 @@ export default function EventCalendar({ events }) {
           const dayEvents = eventsByDay.get(key) ?? [];
           const inMonth = isCurrentMonth(date);
           const isToday = key === todayKey;
+          // ISO date keys compare correctly as strings.
+          const inC100Week = key >= c100Week.start && key <= c100Week.end;
 
           return (
             <div
               key={key}
               className={`min-h-[92px] border-b border-r border-line p-1.5 sm:min-h-[110px] sm:p-2 [&:nth-child(7n)]:border-r-0 ${
-                isToday ? "bg-rose-soft/60" : inMonth ? "bg-paper" : "bg-cloud/50"
+                inC100Week
+                  ? "border-rose bg-rose"
+                  : isToday
+                    ? "bg-rose-soft/60"
+                    : inMonth
+                      ? "bg-paper"
+                      : "bg-cloud/50"
               }`}
             >
               <span
                 className={`text-xs font-semibold ${
-                  isToday ? "text-rose" : inMonth ? "text-ink" : "text-ink/30"
+                  inC100Week
+                    ? isToday
+                      ? "rounded-full bg-white px-1.5 py-0.5 text-rose"
+                      : "text-white"
+                    : isToday
+                      ? "text-rose"
+                      : inMonth
+                        ? "text-ink"
+                        : "text-ink/30"
                 }`}
               >
                 {date.getDate()}
               </span>
+              {key === c100Week.start && (
+                <span className="ml-1 text-[9px] font-bold uppercase tracking-wide text-white sm:text-[10px]">
+                  {c100Week.label}
+                </span>
+              )}
 
               <div className="mt-1 flex flex-col gap-0.5">
                 {dayEvents.map((e) => (
@@ -134,12 +155,16 @@ export default function EventCalendar({ events }) {
                     key={e.id}
                     type="button"
                     onClick={() => setModalEvent(e)}
-                    className="flex items-center gap-1 truncate rounded px-0.5 py-px text-left text-[10px] font-medium leading-tight text-ink/80 hover:bg-rose/10 hover:text-rose sm:text-[11px]"
+                    className={`flex items-center gap-1 truncate rounded px-0.5 py-px text-left text-[10px] font-medium leading-tight sm:text-[11px] ${
+                      inC100Week
+                        ? "text-white hover:bg-white/20"
+                        : "text-ink/80 hover:bg-rose/10 hover:text-rose"
+                    }`}
                     title={e.title}
                   >
                     <span
                       className={`h-1.5 w-1.5 shrink-0 rounded-full ${
-                        categoryStyles[e.category]?.dot ?? "bg-ink-soft"
+                        inC100Week ? "bg-white" : (categoryStyles[e.category]?.dot ?? "bg-ink-soft")
                       }`}
                     />
                     <span className="truncate">
@@ -161,6 +186,10 @@ export default function EventCalendar({ events }) {
             {c.label}
           </span>
         ))}
+        <span className="flex items-center gap-1.5 text-[11px] font-bold text-rose">
+          <span className="h-2.5 w-2.5 rounded-sm bg-rose" />
+          {c100Week.label}
+        </span>
       </div>
 
       <EventAddModal event={modalEvent} onClose={() => setModalEvent(null)} />
