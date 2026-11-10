@@ -7,6 +7,23 @@
 export const events = [
   // --- Past events (real recaps) ---
   {
+    id: "c100-national-conference-atlanta-2026",
+    title: "7th Annual Collegiate 100 National Conference",
+    date: "2026-10-29",
+    time: "Oct 29 - Nov 1",
+    location: "Atlanta, GA",
+    category: "professional",
+    status: "past",
+    summary:
+      "Elanna Benton, Tyrek Jackson, Uchechukwu Ogbuaku, and LaZaria Holland represented the Clutch City Chapter at the 7th Annual Collegiate 100 National Conference in Atlanta, sponsored by Emerging 100 Houston.",
+    body: [
+      "From October 29 to November 1, Collegiate 100 at University of Houston traveled to Atlanta, Georgia for the 7th Annual Collegiate 100 National Conference, joining chapters from across Texas and the country.",
+      "Elanna Benton, Tyrek Jackson, Uchechukwu Ogbuaku, and LaZaria Holland represented our chapter in sessions on leadership development, entrepreneurship, economic empowerment, mental wellness, and career readiness.",
+      "Our members came home with sharper leadership skills, a bigger mentorship network, new connections with other chapters, and fresh ideas for community engagement. We plan to put those lessons to work in our initiatives here at the University of Houston.",
+      "Thank you to Emerging 100 Houston for sponsoring our attendance. What They See Is What They'll Be.",
+    ],
+  },
+  {
     id: "e100-leadership-class-2026-08-29",
     title: "Emerging 100 Leadership Class",
     date: "2026-08-29",
