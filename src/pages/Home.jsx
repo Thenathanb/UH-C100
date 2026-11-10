@@ -10,7 +10,9 @@ import { events, sortByDateAsc } from "../data/events.js";
 
 const recentEvents = sortByDateAsc(
   events.filter((e) => e.status === "past")
-).reverse();
+)
+  .reverse()
+  .slice(0, 4); // keep the home page short; the rest live on /events
 
 const marqueeItems = [
   "Mentoring",
